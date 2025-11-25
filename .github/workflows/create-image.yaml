@@ -1,12 +1,7 @@
 name: Build & Push Cal.com Whitelabel
 
 on:
-  push:
-    branches:
-      - main
-      - master
-    tags:
-      - "v*.*.*"   # optional: build on version tags as well
+  workflow_dispatch:
 
 jobs:
   build-and-push:
