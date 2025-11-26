@@ -45,8 +45,8 @@ services:
       - calcom-net
     # For bare Docker: expose port 3000
     # In Dokploy/Traefik, you normally REMOVE this and map via the proxy.
-    ports:
-      - "3145:3000"
+    # ports:
+    #   - "3145:3000"
 
   # Optional: Prisma Studio (database UI).
   # In real production, you usually comment this entire service out,
