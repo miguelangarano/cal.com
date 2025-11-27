@@ -23,21 +23,25 @@ services:
 
   calcom:
     # Official image + custom build for your URLs/branding
-    image: miguelangarano/calcom-whitelabel
+    image: calcom/cal.com:latest
     env_file: .env
     environment:
-      # RUNTIME envs
       DATABASE_URL: ${DATABASE_URL}
       DATABASE_DIRECT_URL: ${DATABASE_DIRECT_URL}
       NEXTAUTH_URL: ${NEXTAUTH_URL}
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
       CALENDSO_ENCRYPTION_KEY: ${CALENDSO_ENCRYPTION_KEY}
-      # SMTP – needed for emails in production
+
       SMTP_HOST: ${SMTP_HOST}
       SMTP_PORT: ${SMTP_PORT}
       SMTP_USER: ${SMTP_USER}
       SMTP_PASSWORD: ${SMTP_PASSWORD}
       SMTP_FROM: ${SMTP_FROM}
+
+      NEXT_PUBLIC_WEBAPP_URL: ${NEXT_PUBLIC_WEBAPP_URL}
+      NEXT_PUBLIC_API_V2_URL: ${NEXT_PUBLIC_API_V2_URL}
+      CALCOM_TELEMETRY_DISABLED: ${CALCOM_TELEMETRY_DISABLED}
+      NEXT_PUBLIC_LICENSE_CONSENT: ${NEXT_PUBLIC_LICENSE_CONSENT}
     restart: always
     depends_on:
       - database
