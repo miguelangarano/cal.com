@@ -20,6 +20,8 @@ services:
       - calcom-db-data:/var/lib/postgresql/data
     networks:
       - calcom-net
+    ports:
+      - "5432:5432"
 
   calcom:
     # Official image + custom build for your URLs/branding
