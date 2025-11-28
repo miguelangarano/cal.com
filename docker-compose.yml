@@ -51,6 +51,14 @@ services:
       EMAIL_SERVER_PORT: ${EMAIL_SERVER_PORT}
       EMAIL_SERVER_USER: ${EMAIL_SERVER_USER}
       EMAIL_SERVER_PASSWORD: ${EMAIL_SERVER_PASSWORD}
+
+      ENABLE_PAYMENTS: false
+      ENABLE_STRIPE: false
+
+      # No Stripe keys
+      STRIPE_PRIVATE_KEY: "1"
+      STRIPE_PUBLIC_KEY: "1"
+      STRIPE_WEBHOOK_SECRET: "1"
     restart: always
     depends_on:
       - database
